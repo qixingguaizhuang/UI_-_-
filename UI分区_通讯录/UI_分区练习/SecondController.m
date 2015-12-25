@@ -7,8 +7,17 @@
 //
 
 #import "SecondController.h"
+#import "LTView.h"
+
+
 
 @interface SecondController ()
+
+@property(nonatomic, retain) UITextField *textFieldName;
+
+@property (nonatomic, retain) UITextField *textFieldOfPhoneNumber;
+
+@property (nonatomic, retain) UIImageView *imageViewOfHead;
 
 @end
 
@@ -17,10 +26,67 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor brownColor];
-    
-    
-    // Do any additional setup after loading the view.
+//    [self creatTextFieldName];
+    [self creatNameAndNumaber];
+   
 }
+
+
+
+- (void)creatTextFieldName{
+
+    self.textFieldName = [[UITextField alloc] initWithFrame:CGRectMake(40, 120, self.view.frame.size.width - 80, 60)];
+    
+    self.textFieldName.borderStyle = 3;
+    
+    self.textFieldName.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.textFieldName];
+    
+    [_textFieldName release];
+
+}
+
+
+- (void)creatNameAndNumaber{
+
+
+    LTView *nameView = [[LTView alloc] initWithFrame:CGRectMake(40, 220, self.view.frame.size.width - 80, 60)];
+    
+    nameView.lableOfLeft.text = @"姓名";
+    
+    nameView.textfieldOfright.placeholder = @"";
+    
+    [self.view addSubview:nameView];
+
+
+    [nameView release];
+    
+    
+    
+    LTView *viewOfKey = [[LTView alloc] initWithFrame:CGRectMake(40, 270, self.view.frame.size.width - 80, 60)];
+    
+    viewOfKey.lableOfLeft.text = @"电话号码";
+    
+    viewOfKey.textfieldOfright.placeholder = @"";
+    
+    [self.view addSubview:viewOfKey];
+    
+    [viewOfKey release];
+    
+    
+
+
+}
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

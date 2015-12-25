@@ -38,7 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.navigationItem.title = @"通讯录";
+    self.navigationItem.title = @"iOS - 7 班级通讯录";
    
     [self creatTableView];
     
@@ -76,7 +76,7 @@
     
     self.dicContact = [NSMutableDictionary dictionaryWithContentsOfFile:path];
     
-    self.arrKey = [self.dicContact allKeys].mutableCopy;
+  //  self.arrKey = [self.dicContact allKeys].mutableCopy;
     
     // 排序
     
